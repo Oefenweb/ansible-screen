@@ -4,14 +4,16 @@
   apt:
     name: screen
     state: latest
+    update_cache: true
+    cache_valid_time: 3600
   tags: [configuration, screen, screen-install]
 
 - name: create configuration file
   template:
     src: etc/screenrc.j2
-    dest: "{{ item }}/.screenrc"
-    owner: root
-    group: root
-    mode: 0644
-  with_items: screen_screenrc_destinations
+    dest: "{{ item.value.dest }}/.screenrc"
+    owner: "{{ item.value.owner | default('root') }}"
+    group: "{{ item.value.group | default('root') }}"
+    mode: "{{ item.value.mode | default('0644') }}"
+  with_dict: screen_screenrc_destinations
   tags: [configuration, screen, screen-configuration]
