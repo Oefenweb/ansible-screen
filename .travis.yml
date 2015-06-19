@@ -32,6 +32,11 @@ env:
   - ANSIBLE_VERSION=1.5.1
   - ANSIBLE_VERSION=1.5
 
+matrix:
+  allow_failures:
+    # See https://github.com/ansible/ansible/issues/6385
+    - env: ANSIBLE_VERSION=1.5.1
+
 branches:
   only:
     - master
@@ -44,7 +49,7 @@ before_install:
 
 install:
   # Install Ansible.
-  - pip install ansible==$ANSIBLE_VERSION
+  - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible; else pip install ansible==$ANSIBLE_VERSION; fi
 
   # Add ansible.cfg to pick up roles path.
   - printf "[defaults]\nroles_path = ../" > ansible.cfg
