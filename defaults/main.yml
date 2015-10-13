@@ -1,5 +1,5 @@
----
 # defaults file for screen
+---
 screen_screenrc_destinations:
   skell:
     dest: /etc/skel
