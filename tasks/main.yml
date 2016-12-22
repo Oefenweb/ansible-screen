@@ -2,11 +2,15 @@
 ---
 - name: install
   apt:
-    name: screen
-    state: latest
+    name: "{{ item }}"
+    state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
-  tags: [configuration, screen, screen-install]
+  with_items: "{{ screen_dependencies }}"
+  tags:
+    - configuration
+    - screen
+    - screen-install
 
 - name: create configuration file
   template:
@@ -15,5 +19,8 @@
     owner: "{{ item.value.owner | default('root') }}"
     group: "{{ item.value.group | default(item.value.owner) | default('root') }}"
     mode: "{{ item.value.mode | default('0644') }}"
-  with_dict: screen_screenrc_destinations
-  tags: [configuration, screen, screen-configuration]
+  with_dict: "{{ screen_screenrc_destinations }}"
+  tags:
+    - configuration
+    - screen
+    - screen-configuration
