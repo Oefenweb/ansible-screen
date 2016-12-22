@@ -1,2 +1,4 @@
 # vars file for screen
 ---
+screen_dependencies:
+  - screen
