@@ -15,3 +15,5 @@
         dest: /home/vagrant
         owner: vagrant
         group: vagrant
+    screen_defscrollback: 10000
+    screen_termcapinfo: xterm* ti@:te@

@@ -21,6 +21,7 @@ None
 * `screen_autodetach`: [default: `true`]: Whether or not to automatically detach the session on SIGHUP
 * `screen_vbell`: [default: `false`]: Whether or not to use visual bell
 * `screen_defscrollback`: [default: `1000`]: Default lines of scrollback
+* `screen_termcapinfo`: [optional]: Use this to modify your terminal's termcap entry without going through all the hassles involved in creating a custom termcap entry (e.g. `xterm* ti@:te@`)
 
 ## Dependencies
 
