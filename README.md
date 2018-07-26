@@ -1,6 +1,6 @@
 ## screen
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-screen.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-screen) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-screen-blue.svg)](https://galaxy.ansible.com/tersmitten/screen)
+[![Build Status](https://travis-ci.org/Oefenweb/ansible-screen.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-screen) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-screen-blue.svg)](https://galaxy.ansible.com/Oefenweb/screen)
 
 Set up screen in Debian-like systems.
 
