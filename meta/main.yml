@@ -1,6 +1,7 @@
 # meta file for screen
 ---
 galaxy_info:
+  role_name: screen
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
   description: Set up screen in Debian-like systems
