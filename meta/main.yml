@@ -1,6 +1,7 @@
-# meta file for screen
+# meta file
 ---
 galaxy_info:
+  namespace: oefenweb
   role_name: screen
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
