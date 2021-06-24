@@ -3,17 +3,10 @@
 - hosts: all
   remote_user: vagrant
   become: true
+  pre_tasks:
+    - name: include vars
+      include_vars: "{{ playbook_dir }}/vars/main.yml"
+    - name: include tasks
+      include: "{{ playbook_dir }}/tasks/pre.yml"
   roles:
     - ../../
-  vars:
-    screen_screenrc_destinations:
-      skell:
-        dest: /etc/skel
-      current:
-        dest: "{{ ansible_env.HOME }}"
-      vagrant:
-        dest: /home/vagrant
-        owner: vagrant
-        group: vagrant
-    screen_defscrollback: 10000
-    screen_termcapinfo: xterm* ti@:te@
