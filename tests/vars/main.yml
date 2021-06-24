@@ -1,0 +1,13 @@
+# vars file
+---
+screen_screenrc_destinations:
+  skell:
+    dest: /etc/skel
+  current:
+    dest: "{{ ansible_env.HOME }}"
+  dummy:
+    dest: /home/dummy
+    owner: dummy
+    group: dummy
+screen_defscrollback: 10000
+screen_termcapinfo: xterm* ti@:te@
