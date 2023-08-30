@@ -1,7 +1,7 @@
 # tasks file
 ---
 - name: install
-  apt:
+  ansible.builtin.apt:
     name: "{{ screen_dependencies }}"
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
@@ -12,7 +12,7 @@
     - screen-install
 
 - name: create configuration file
-  template:
+  ansible.builtin.template:
     src: etc/screenrc.j2
     dest: "{{ item.value.dest }}/.screenrc"
     owner: "{{ item.value.owner | default('root') }}"
