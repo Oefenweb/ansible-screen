@@ -1,4 +1,4 @@
-# {{ ansible_managed }}
+{{ ansible_managed | comment }}
 
 startup_message {{ 'on' if screen_startup_message else 'off' }}
 autodetach {{ 'on' if screen_autodetach else 'off' }}
